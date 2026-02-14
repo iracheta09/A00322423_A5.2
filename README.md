@@ -1,32 +1,55 @@
 # A00322423_A5.2 – Programming Exercise 2 (Static Analysis)
 
-# Introducción
+## Introducción
 
 Esta actividad tuvo como propósito aplicar prácticas de pruebas estáticas y análisis de calidad en el desarrollo de software, mediante la implementación de un programa en Python para el cálculo del costo total de ventas a partir de un catálogo de productos y registros de ventas.
 
 Se utilizaron herramientas de análisis estático como flake8 y pylint para validar el cumplimiento del estándar PEP-8, detectar problemas potenciales en el código y mejorar su calidad antes de la ejecución. Asimismo, se generaron pruebas con distintos conjuntos de datos (TC1, TC2 y TC3) para verificar el correcto funcionamiento del programa y documentar sus resultados.
 
 ## Objetivo
+
 Implementar computeSales.py para calcular el costo total de los registros de ventas utilizando un catálogo de precios de productos.
 El programa se ejecuta desde la línea de comandos, imprime los resultados en la consola y los exporta a un archivo de resultados.
 
-## Como Ejecutar:
+## Cómo ejecutar
 python computeSales.py <priceCatalogue.json> <salesRecord.json>
 
+## Ejecución de pruebas
 
- Resultados Obtenidos:
-## TC1 Total: 2,481.86
-## TC2 Total: 166,568.23
-## TC3 Total: 165,235.37
+TC1
 
-
- Pruebas Flake8 y Pylint
-## @iracheta09 ➜ /workspaces/A00322423_A5.2 (main) $ flake8 computeSales.py
-## @iracheta09 ➜ /workspaces/A00322423_A5.2 (main) $ pylint computeSales.py
-## ------------------------------------
-## Your code has been rated at 10.00/10
+python computeSales.py test_cases/TC1/ProductList.json test_cases/TC1/Sales.json
 
 
+TC2
+
+python computeSales.py test_cases/TC1/ProductList.json test_cases/TC2/Sales.json
+
+
+TC3
+
+python computeSales.py test_cases/TC1/ProductList.json test_cases/TC3/Sales.json
+
+## Resultados obtenidos
+
+TC1 Total: 2,481.86
+
+TC2 Total: 166,568.23
+
+TC3 Total: 165,235.37
+
+Durante la ejecución de TC3 se generan advertencias cuando un producto no existe en el catálogo; sin embargo, el programa continúa y calcula el total considerando únicamente los productos válidos.
+
+## Pruebas Flake8 y Pylint
+flake8 computeSales.py
+pylint computeSales.py
+
+
+Resultado:
+
+flake8: sin errores
+
+pylint: 10.00/10
 
 ## Conclusiones
 
